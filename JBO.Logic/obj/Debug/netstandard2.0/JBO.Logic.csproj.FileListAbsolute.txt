@@ -1,0 +1,9 @@
+D:\VS2017Projects\JBO\JBO.Logic\bin\Debug\netstandard2.0\JBO.Logic.deps.json
+D:\VS2017Projects\JBO\JBO.Logic\bin\Debug\netstandard2.0\JBO.Logic.dll
+D:\VS2017Projects\JBO\JBO.Logic\bin\Debug\netstandard2.0\JBO.Logic.pdb
+D:\VS2017Projects\JBO\JBO.Logic\obj\Debug\netstandard2.0\JBO.Logic.csprojResolveAssemblyReference.cache
+D:\VS2017Projects\JBO\JBO.Logic\obj\Debug\netstandard2.0\JBO.Logic.csproj.CoreCompileInputs.cache
+D:\VS2017Projects\JBO\JBO.Logic\obj\Debug\netstandard2.0\JBO.Logic.AssemblyInfoInputs.cache
+D:\VS2017Projects\JBO\JBO.Logic\obj\Debug\netstandard2.0\JBO.Logic.AssemblyInfo.cs
+D:\VS2017Projects\JBO\JBO.Logic\obj\Debug\netstandard2.0\JBO.Logic.dll
+D:\VS2017Projects\JBO\JBO.Logic\obj\Debug\netstandard2.0\JBO.Logic.pdb

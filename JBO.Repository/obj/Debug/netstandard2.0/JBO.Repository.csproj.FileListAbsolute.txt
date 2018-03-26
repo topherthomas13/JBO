@@ -4,3 +4,6 @@ D:\VS2017Projects\JBO\JBO.Repository\obj\Debug\netstandard2.0\JBO.Repository.csp
 D:\VS2017Projects\JBO\JBO.Repository\obj\Debug\netstandard2.0\JBO.Repository.csproj.CoreCompileInputs.cache
 D:\VS2017Projects\JBO\JBO.Repository\obj\Debug\netstandard2.0\JBO.Repository.AssemblyInfoInputs.cache
 D:\VS2017Projects\JBO\JBO.Repository\obj\Debug\netstandard2.0\JBO.Repository.AssemblyInfo.cs
+D:\VS2017Projects\JBO\JBO.Repository\bin\Debug\netstandard2.0\JBO.Repository.pdb
+D:\VS2017Projects\JBO\JBO.Repository\obj\Debug\netstandard2.0\JBO.Repository.dll
+D:\VS2017Projects\JBO\JBO.Repository\obj\Debug\netstandard2.0\JBO.Repository.pdb
