@@ -1,0 +1,6 @@
+D:\VS2017Projects\JBO\JBO.Repository\bin\Debug\netstandard2.0\JBO.Repository.deps.json
+D:\VS2017Projects\JBO\JBO.Repository\bin\Debug\netstandard2.0\JBO.Repository.dll
+D:\VS2017Projects\JBO\JBO.Repository\obj\Debug\netstandard2.0\JBO.Repository.csprojResolveAssemblyReference.cache
+D:\VS2017Projects\JBO\JBO.Repository\obj\Debug\netstandard2.0\JBO.Repository.csproj.CoreCompileInputs.cache
+D:\VS2017Projects\JBO\JBO.Repository\obj\Debug\netstandard2.0\JBO.Repository.AssemblyInfoInputs.cache
+D:\VS2017Projects\JBO\JBO.Repository\obj\Debug\netstandard2.0\JBO.Repository.AssemblyInfo.cs
