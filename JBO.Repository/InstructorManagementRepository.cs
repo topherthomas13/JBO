@@ -17,7 +17,7 @@ namespace JBO.Repository
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@FullName", entity.FullName);
-                SqlMapper.Execute(con, "AddInstructor", param: parameters, commandType: StoredProcedure);
+                SqlMapper.Execute(Con, "AddInstructor", param: parameters, commandType: StoredProcedure);
             }
             catch (Exception ex)
             {
@@ -31,7 +31,7 @@ namespace JBO.Repository
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@id", id);
-                SqlMapper.Execute(con, "DeleteInstructor", param: parameters, commandType: StoredProcedure);
+                SqlMapper.Execute(Con, "DeleteInstructor", param: parameters, commandType: StoredProcedure);
             }
             catch (Exception ex)
             {
@@ -45,7 +45,7 @@ namespace JBO.Repository
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@id", id);
-                return SqlMapper.Query<Instructor>(con, "GetInstructors", parameters, commandType: StoredProcedure).FirstOrDefault();
+                return SqlMapper.Query<Instructor>(Con, "GetInstructors", parameters, commandType: StoredProcedure).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace JBO.Repository
         {
             try
             {
-                IList<Instructor> instructorList = SqlMapper.Query<Instructor>(con, "GetInstructors", commandType: StoredProcedure).ToList();
+                IList<Instructor> instructorList = SqlMapper.Query<Instructor>(Con, "GetInstructors", commandType: StoredProcedure).ToList();
                 return instructorList;
             }
             catch (Exception ex)
@@ -73,7 +73,7 @@ namespace JBO.Repository
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@CustomerID", entity.Id);
                 parameters.Add("@CustomerName", entity.FullName);
-                SqlMapper.Execute(con, "UpdateInstructor", param: parameters, commandType: StoredProcedure);
+                SqlMapper.Execute(Con, "UpdateInstructor", param: parameters, commandType: StoredProcedure);
             }
             catch (Exception ex)
             {

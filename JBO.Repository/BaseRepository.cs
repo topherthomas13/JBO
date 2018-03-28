@@ -1,20 +1,19 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace JBO.Repository
 {
     public class BaseRepository : IDisposable
     {
-        IConfiguration config;
-        protected IDbConnection con;
+        protected IDbConnection Con;
 
         public BaseRepository()
         {
-            con = new SqlConnection(config.GetConnectionString("JBO_Dev"));
+            Con = new SqlConnection("Data Source=MCX-BOYD;Initial Catalog=DefaultConnection;Integrated Security=True");
         }
 
         public void Dispose()
