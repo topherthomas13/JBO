@@ -183,11 +183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repos\\Personal\\JBO.Entities\\JBO.Entities.csproj",
+      "projectUniqueName": "C:\\repos\\Personal\\JBO\\JBO.Entities\\JBO.Entities.csproj",
       "projectName": "JBO.Entities",
-      "projectPath": "C:\\repos\\Personal\\JBO.Entities\\JBO.Entities.csproj",
+      "projectPath": "C:\\repos\\Personal\\JBO\\JBO.Entities\\JBO.Entities.csproj",
       "packagesPath": "C:\\Users\\cboyd\\.nuget\\packages\\",
-      "outputPath": "C:\\repos\\Personal\\JBO.Entities\\obj\\",
+      "outputPath": "C:\\repos\\Personal\\JBO\\JBO.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

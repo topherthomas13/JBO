@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "JBO.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/JBO.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JBO.Entities.dll": {}
+        }
       }
     }
   },
@@ -169,10 +179,16 @@
         "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._"
       ]
+    },
+    "JBO.Entities/1.0.0": {
+      "type": "project",
+      "path": "../JBO.Entities/JBO.Entities.csproj",
+      "msbuildProject": "../JBO.Entities/JBO.Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "JBO.Entities >= 1.0.0",
       "NETStandard.Library >= 2.0.1"
     ]
   },
@@ -183,11 +199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repos\\Personal\\JBO.Repository.Interface\\JBO.Repository.Interface.csproj",
+      "projectUniqueName": "C:\\repos\\Personal\\JBO\\JBO.Repository.Interface\\JBO.Repository.Interface.csproj",
       "projectName": "JBO.Repository.Interface",
-      "projectPath": "C:\\repos\\Personal\\JBO.Repository.Interface\\JBO.Repository.Interface.csproj",
+      "projectPath": "C:\\repos\\Personal\\JBO\\JBO.Repository.Interface\\JBO.Repository.Interface.csproj",
       "packagesPath": "C:\\Users\\cboyd\\.nuget\\packages\\",
-      "outputPath": "C:\\repos\\Personal\\JBO.Repository.Interface\\obj\\",
+      "outputPath": "C:\\repos\\Personal\\JBO\\JBO.Repository.Interface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -205,7 +221,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\repos\\Personal\\JBO\\JBO.Entities\\JBO.Entities.csproj": {
+              "projectPath": "C:\\repos\\Personal\\JBO\\JBO.Entities\\JBO.Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
