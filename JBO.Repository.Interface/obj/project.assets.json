@@ -30,7 +30,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "Zpizols2e5q82iKc3uRJsAC9TWnjkXgcDw/hC7WKUT9r4vlWfNjUnbolf9wVbbpxVrPYmNf9fbOb7M4nY8vwoA==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -177,27 +177,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tophe\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\cboyd\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VS2017Projects\\JBO\\JBO.Repository.Interface\\JBO.Repository.Interface.csproj",
+      "projectUniqueName": "C:\\repos\\Personal\\JBO.Repository.Interface\\JBO.Repository.Interface.csproj",
       "projectName": "JBO.Repository.Interface",
-      "projectPath": "D:\\VS2017Projects\\JBO\\JBO.Repository.Interface\\JBO.Repository.Interface.csproj",
-      "packagesPath": "C:\\Users\\tophe\\.nuget\\packages\\",
-      "outputPath": "D:\\VS2017Projects\\JBO\\JBO.Repository.Interface\\obj\\",
+      "projectPath": "C:\\repos\\Personal\\JBO.Repository.Interface\\JBO.Repository.Interface.csproj",
+      "packagesPath": "C:\\Users\\cboyd\\.nuget\\packages\\",
+      "outputPath": "C:\\repos\\Personal\\JBO.Repository.Interface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tophe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\cboyd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"

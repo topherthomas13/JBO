@@ -1,3 +1,15 @@
+CREATE DATABASE JBO
+GO
+
+CREATE SCHEMA [Management]
+GO
+
+CREATE SCHEMA [Web]
+GO
+
+CREATE SCHEMA [Scheduler]
+GO
+
 CREATE TABLE Management.Instructors
 (
 	Id INT IDENTITY(1,1) PRIMARY KEY
