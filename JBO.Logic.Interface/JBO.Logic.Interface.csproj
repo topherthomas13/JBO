@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JBO.Entities\JBO.Entities.csproj" />
-    <ProjectReference Include="..\JBO.Logic.Interface\JBO.Logic.Interface.csproj" />
-    <ProjectReference Include="..\JBO.Repository.Interface\JBO.Repository.Interface.csproj" />
   </ItemGroup>
 
 </Project>

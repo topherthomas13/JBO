@@ -5,13 +5,15 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBO.API", "JBO.API\JBO.API.csproj", "{AE879E25-956D-4C7C-9574-CE63343CD329}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBO.Entities", "JBO.Entities\JBO.Entities.csproj", "{EA540C24-C282-451C-B6FA-6796812E3339}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBO.Entities", "JBO.Entities\JBO.Entities.csproj", "{EA540C24-C282-451C-B6FA-6796812E3339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBO.Repository.Interface", "JBO.Repository.Interface\JBO.Repository.Interface.csproj", "{B4658AD5-C9E1-426C-BCC6-44574EEC8F2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBO.Repository.Interface", "JBO.Repository.Interface\JBO.Repository.Interface.csproj", "{B4658AD5-C9E1-426C-BCC6-44574EEC8F2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBO.Repository", "JBO.Repository\JBO.Repository.csproj", "{72C3D25E-A52D-4805-8D59-49A496F4172A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBO.Repository", "JBO.Repository\JBO.Repository.csproj", "{72C3D25E-A52D-4805-8D59-49A496F4172A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBO.Logic", "JBO.Logic\JBO.Logic.csproj", "{3B44DCC3-9158-4FFD-90D4-BAD51FC5E291}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBO.Logic", "JBO.Logic\JBO.Logic.csproj", "{3B44DCC3-9158-4FFD-90D4-BAD51FC5E291}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBO.Logic.Interface", "JBO.Logic.Interface\JBO.Logic.Interface.csproj", "{1C364827-56F0-4071-8ECE-0ED0A332AF35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3B44DCC3-9158-4FFD-90D4-BAD51FC5E291}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B44DCC3-9158-4FFD-90D4-BAD51FC5E291}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B44DCC3-9158-4FFD-90D4-BAD51FC5E291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C364827-56F0-4071-8ECE-0ED0A332AF35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C364827-56F0-4071-8ECE-0ED0A332AF35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C364827-56F0-4071-8ECE-0ED0A332AF35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C364827-56F0-4071-8ECE-0ED0A332AF35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

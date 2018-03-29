@@ -1,8 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using JBO.Logic;
+using JBO.Logic.Interface;
+using JBO.Repository;
+using JBO.Repository.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -24,6 +23,9 @@ namespace JBO.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton(_ => Configuration);
+            services.AddTransient<IInstructorManagementLogic, InstructorManagementLogic>();
+            services.AddTransient<IInstructorManagementRepository, InstructorManagementRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JBO.Entities\JBO.Entities.csproj" />
+    <ProjectReference Include="..\JBO.Logic.Interface\JBO.Logic.Interface.csproj" />
     <ProjectReference Include="..\JBO.Logic\JBO.Logic.csproj" />
     <ProjectReference Include="..\JBO.Repository.Interface\JBO.Repository.Interface.csproj" />
     <ProjectReference Include="..\JBO.Repository\JBO.Repository.csproj" />
