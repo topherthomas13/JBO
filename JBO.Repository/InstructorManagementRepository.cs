@@ -10,10 +10,21 @@ namespace JBO.Repository
 {
     public class InstructorManagementRepository : BaseRepository, IInstructorManagementRepository
     {
-        public InstructorManagementRepository(IConfiguration config)
-            : base(config)
+        public InstructorManagementRepository(IConfiguration config) : base(config)
         {
-            
+        }
+
+        public IEnumerable<Instructor> GetAll()
+        {
+            IList<Instructor> instructorList = SqlDB.Query<Instructor>("Management.GetInstructors", commandType: StoredProcedure).ToList();
+            return instructorList;
+        }
+
+        public Instructor Get(int id)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@id", id);
+            return SqlDB.Query<Instructor>("Management.GetInstructors", parameters, commandType: StoredProcedure).FirstOrDefault();
         }
 
         public void Add(Instructor entity)
@@ -28,19 +39,6 @@ namespace JBO.Repository
             var parameters = new DynamicParameters();
             parameters.Add("@id", id);
             SqlDB.Execute("Management.DeleteInstructor", parameters, commandType: StoredProcedure);
-        }
-
-        public Instructor Get(int id)
-        {
-            var parameters = new DynamicParameters();
-            parameters.Add("@id", id);
-            return SqlDB.Query<Instructor>("Management.GetInstructors", parameters, commandType: StoredProcedure).FirstOrDefault();
-        }
-
-        public IEnumerable<Instructor> GetAll()
-        {
-            IList<Instructor> instructorList = SqlDB.Query<Instructor>("Management.GetInstructors", commandType: StoredProcedure).ToList();
-            return instructorList;
         }
 
         public void Update(Instructor entity)

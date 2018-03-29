@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
 
 namespace JBO.API
 {
@@ -22,10 +23,14 @@ namespace JBO.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
             services.AddSingleton(_ => Configuration);
             services.AddTransient<IInstructorManagementLogic, InstructorManagementLogic>();
             services.AddTransient<IInstructorManagementRepository, InstructorManagementRepository>();
+            services.AddTransient<IProjectManagementRepository, ProjectManagementRepository>();
+            services.AddTransient<IProjectManagementLogic, ProjectManagementLogic>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
