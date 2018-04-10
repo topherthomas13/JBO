@@ -22,11 +22,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\apiPathsInjectable.ts" />
+    <None Remove="ClientApp\app\config.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\JBO.Entities\JBO.Entities.csproj" />
     <ProjectReference Include="..\JBO.Logic.Interface\JBO.Logic.Interface.csproj" />
     <ProjectReference Include="..\JBO.Logic\JBO.Logic.csproj" />
     <ProjectReference Include="..\JBO.Repository.Interface\JBO.Repository.Interface.csproj" />
     <ProjectReference Include="..\JBO.Repository\JBO.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\apiPathsInjectable.ts" />
+    <TypeScriptCompile Include="ClientApp\app\config.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

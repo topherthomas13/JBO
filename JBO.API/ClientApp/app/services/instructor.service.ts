@@ -2,42 +2,44 @@ import { Injectable } from "@angular/core"
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
 
+import { ApiPathsInjectable } from "../apiPathsInjectable";
+
 import { Instructor } from "../models/instructor";
 
 const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable()
 export class InstructorService {
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private instructorApi: ApiPathsInjectable) { }
 
-    // path to the api
-    private instructorApi = "api/Instructor";
+  // path to the api
+  //private instructorApi = "api/Instructor";
 
-    // get
-    getInstructors(): Observable<Instructor[]> {
-        return this.http.get<Instructor[]>(this.instructorApi)
-    }
+  // get
+  getInstructors(): Observable<Instructor[]> {
+    return this.http.get<Instructor[]>(this.instructorApi.instructorApi);
+  }
 
-    // get
-    getInstructor(id: number): Observable<Instructor> {
-        return this.http.get<Instructor>(this.instructorApi + "/${id}");
-    }
+  // get
+  getInstructor(id: number): Observable<Instructor> {
+    return this.http.get<Instructor>(this.instructorApi.instructorApi + "/${id}");
+  }
 
-    // post
-    addInstructor(instructor: Instructor): Observable<Instructor> {
-        return this.http.post<Instructor>(this.instructorApi, instructor, httpOptions);
-    }
+  // post
+  addInstructor(instructor: Instructor): Observable<Instructor> {
+    return this.http.post<Instructor>(this.instructorApi.instructorApi, instructor, httpOptions);
+  }
 
-    // put
-    updateInstructor(instructor: Instructor): Observable<any> {
-        return this.http.put(this.instructorApi, instructor, httpOptions);
-    }
+  // put
+  updateInstructor(instructor: Instructor): Observable<any> {
+    return this.http.put(this.instructorApi.instructorApi, instructor, httpOptions);
+  }
 
-    // delete
-    deleteInstructor(id: number): Observable<Instructor> {
-        return this.http.delete<Instructor>(this.instructorApi + "/${id}", httpOptions);
-    }
+  // delete
+  deleteInstructor(id: number): Observable<Instructor> {
+    return this.http.delete<Instructor>(this.instructorApi.instructorApi + "/${id}", httpOptions);
+  }
 }

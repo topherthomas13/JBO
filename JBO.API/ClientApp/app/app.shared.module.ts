@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { ApiPathsInjectable } from "./apiPathsInjectable";
+import { InstructorApiPath } from "./config";
+
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
@@ -29,7 +32,7 @@ import { InstructorComponent } from './components/instructor/instructor.componen
             { path: '**', redirectTo: 'home' }
         ])
     ],
-    providers: [InstructorService]
+  providers: [InstructorService, InstructorApiPath, ApiPathsInjectable]
 })
 export class AppModuleShared {
 }
