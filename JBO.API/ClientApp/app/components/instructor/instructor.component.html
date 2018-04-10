@@ -1,3 +1,10 @@
-<p>
-  instructor works!
-</p>
+<h2>
+  Instructors
+</h2>
+
+<div id="instructorContainer">
+    <div *ngFor="let instructor of instructors" class="well col-md-3">
+        <div class="badge">{{ instructor.FullName }}</div>
+        <div>Active: <input type="checkbox" disabled [checked]="instructor.IsActive"/></div>
+    </div>
+</div>

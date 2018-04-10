@@ -9,12 +9,17 @@ import { Instructor } from "../../models/instructor";
 })
 export class InstructorComponent implements OnInit {
 
-    constructor(instructorService: InstructorService) { }
+    instructors: Instructor[];
 
-    private instructorApi = "/instructor";
+    constructor(private instructorService: InstructorService) { }
 
     ngOnInit() {
+        this.getInstructors();
     }
 
-
+    // get all the current instructors from the database
+    getInstructors() {
+        this.instructorService.getInstructors()
+            .subscribe(instructors => this.instructors = instructors);
+    }
 }
