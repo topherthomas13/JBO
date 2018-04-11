@@ -10,6 +10,7 @@ import { Instructor } from "../../models/instructor";
 export class InstructorComponent implements OnInit {
 
     instructors: Instructor[];
+    instructor: Instructor;
 
     constructor(private instructorService: InstructorService) { }
 
@@ -21,5 +22,14 @@ export class InstructorComponent implements OnInit {
     getInstructors() {
         this.instructorService.getInstructors()
             .subscribe(instructors => this.instructors = instructors);
+    }
+
+    // add new instructor
+    addInstructor(newInstructor: string) {
+        //this.instructor.fullName = newInstructor;
+
+        console.log(newInstructor);
+        //this.instructorService.addInstructor(this.instructor)
+        //    .subscribe(res => this.getInstructors());
     }
 }

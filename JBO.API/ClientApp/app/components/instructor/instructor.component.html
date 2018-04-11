@@ -3,6 +3,10 @@
 </h2>
 
 <div id="instructorContainer">
+    <div id="buttons">
+        <input type="button" (click)="addInstructor(newInstructor.value)" class="btn btn-success" value="Add New Instructor" />
+        <input #newInstructor />
+    </div>
     <div *ngFor="let instructor of instructors" class="well col-md-3">
         <div class="badge">{{ instructor.FullName }}</div>
         <div>Active: <input type="checkbox" disabled [checked]="instructor.IsActive"/></div>
