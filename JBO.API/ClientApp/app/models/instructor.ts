@@ -1,5 +1,5 @@
 export class Instructor {
-    id: number;
-    fullName: string;
-    isActive: boolean;
+    Id: number;
+    FullName: string;
+    IsActive: boolean;
 }
