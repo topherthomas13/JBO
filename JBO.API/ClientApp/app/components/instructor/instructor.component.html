@@ -1,14 +1,22 @@
 <h2>
-  Instructors
+    Instructors
 </h2>
 
 <div id="instructorContainer">
-    <div id="buttons">
-        <input type="button" (click)="addInstructor(newInstructor.value)" class="btn btn-success" value="Add New Instructor" />
-        <input #newInstructor />
+    <div id="buttons" style="margin: 10px;">
+        <button class="btn btn-success" (click)="addInstructor()">Add New Instructor</button>
+        <input [(ngModel)]="newInstructor" />
     </div>
     <div *ngFor="let instructor of instructors" class="well col-md-3">
         <div class="badge">{{ instructor.FullName }}</div>
-        <div>Active: <input type="checkbox" disabled [checked]="instructor.IsActive"/></div>
+        <div>Active: <input type="checkbox" disabled [checked]="instructor.IsActive" /></div>
+        <div>
+            <button class="btn btn-default" (click)="updateInstructor()">Update</button>
+            <button class="btn btn-danger" (click)="deleteInstructor(instructor)">Delete</button>
+            <div [hidden]="!updating">
+                <label for="newName">Enter updated name</label>
+                <input id="newName" #newName /><button class="btn btn-default" (click)="saveInstructor(instructor, newName.value)">Save</button>
+            </div>
+        </div>
     </div>
 </div>
