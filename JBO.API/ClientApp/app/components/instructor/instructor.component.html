@@ -7,13 +7,14 @@
         <button class="btn btn-success" (click)="addInstructor()">Add New Instructor</button>
         <input [(ngModel)]="newInstructor" />
     </div>
-    <div *ngFor="let instructor of instructors" class="well col-md-3">
+    <div *ngFor="let instructor of instructors" class="well col-md-3" style="margin: 5px;">
         <div class="badge">{{ instructor.FullName }}</div>
         <div>Active: <input type="checkbox" disabled [checked]="instructor.IsActive" /></div>
         <div>
-            <button class="btn btn-default" (click)="updateInstructor()">Update</button>
-            <button class="btn btn-danger" (click)="deleteInstructor(instructor)">Delete</button>
-            <div [hidden]="!updating">
+            <button class="btn btn-default" (click)="updateInstructor(instructor.Id)">Update</button>
+            <button [hidden]="instructor.IsActive" class="btn btn-danger" (click)="updateInstructorStatus(instructor.Id, false)">Disable</button>
+            <button [hidden]="!instructor.IsActive" class="btn btn-success" (click)="updateInstructorStatus(instructor.Id, true)">Enable</button>
+            <div [hidden]="!updating || instructor.Id !== selectedInstructorId">
                 <label for="newName">Enter updated name</label>
                 <input id="newName" #newName /><button class="btn btn-default" (click)="saveInstructor(instructor, newName.value)">Save</button>
             </div>

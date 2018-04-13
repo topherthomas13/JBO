@@ -46,7 +46,16 @@ namespace JBO.Repository
             var parameters = new DynamicParameters();
             parameters.Add("@id", entity.Id);
             parameters.Add("@FullName", entity.FullName);
+            parameters.Add("@isActive", entity.IsActive);
             SqlDB.Execute("Management.UpdateInstructor", parameters, commandType: StoredProcedure);
+        }
+
+        public void ChangeInstructorStatus(int id, bool status)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@id", id);
+            parameters.Add("@isActive", status);
+            SqlDB.Execute("Management.ChangeInstructorStatus", parameters, commandType: StoredProcedure);
         }
     }
 }
