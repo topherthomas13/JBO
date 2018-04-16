@@ -12,8 +12,8 @@
         <div>Active: <input type="checkbox" disabled [checked]="instructor.IsActive" /></div>
         <div>
             <button class="btn btn-default" (click)="updateInstructor(instructor.Id)">Update</button>
-            <button [hidden]="instructor.IsActive" class="btn btn-danger" (click)="updateInstructorStatus(instructor.Id, false)">Disable</button>
-            <button [hidden]="!instructor.IsActive" class="btn btn-success" (click)="updateInstructorStatus(instructor.Id, true)">Enable</button>
+            <button *ngIf="instructor.IsActive" class="btn btn-danger" (click)="updateInstructorStatus(instructor.Id, false)">Disable</button>
+            <button *ngIf="!instructor.IsActive" class="btn btn-success" (click)="updateInstructorStatus(instructor.Id, true)">Enable</button>
             <div [hidden]="!updating || instructor.Id !== selectedInstructorId">
                 <label for="newName">Enter updated name</label>
                 <input id="newName" #newName /><button class="btn btn-default" (click)="saveInstructor(instructor, newName.value)">Save</button>
