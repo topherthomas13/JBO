@@ -37,5 +37,10 @@ namespace JBO.Logic
         {
             _instructorRepository.Update(entity);
         }
+
+        public void ChangeInstructorStatus(int id, bool status)
+        {
+            _instructorRepository.ChangeInstructorStatus(id, status);
+        }
     }
 }

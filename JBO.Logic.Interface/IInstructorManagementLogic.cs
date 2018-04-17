@@ -10,5 +10,6 @@ namespace JBO.Logic.Interface
         void Add(Instructor entity);
         void Delete(int id);
         void Update(Instructor entity);
+        void ChangeInstructorStatus(int id, bool status);
     }
 }

@@ -9,7 +9,10 @@ import { Instructor } from "../../models/instructor";
 })
 export class InstructorComponent implements OnInit {
 
-    instructors: Instructor[];
+    private instructors: Instructor[];
+    public updating = false;
+    public newInstructor = "";
+    public selectedInstructorId = 0;
 
     constructor(private instructorService: InstructorService) { }
 
@@ -20,6 +23,51 @@ export class InstructorComponent implements OnInit {
     // get all the current instructors from the database
     getInstructors() {
         this.instructorService.getInstructors()
-            .subscribe(instructors => this.instructors = instructors);
+            .subscribe(instructors => {
+                this.instructors = instructors;
+                console.log(this.instructors);
+            });
+    }
+
+    // add new instructor
+    addInstructor() {
+        if (this.newInstructor !== "") {
+            this.instructorService.addInstructor({ FullName: this.newInstructor } as Instructor)
+                .subscribe(() => {
+                    this.newInstructor = "";
+                    this.getInstructors();
+                });
+        }
+    }
+
+    // delete an instructor
+    deleteInstructor(instructor: Instructor): void {
+        this.instructorService.deleteInstructor(instructor)
+            .subscribe(() => this.getInstructors());
+    }
+
+    // save updated instructor
+    saveInstructor(instructor: Instructor, newName: string) {
+        instructor.FullName = newName;
+        this.instructorService.updateInstructor(instructor)
+            .subscribe(() => {
+                this.getInstructors();
+                this.updating = false;
+                this.selectedInstructorId = -1;
+            });
+    }
+
+    // change active status of instructor
+    updateInstructorStatus(id: number, status: boolean) {
+        this.instructorService.updateInstructorStatus(id, status)
+            .subscribe(() => {
+                this.getInstructors();
+            });
+    }
+
+    // toggle the update controls
+    updateInstructor(id: number) {
+        this.selectedInstructorId = id;
+        this.updating = true;
     }
 }
