@@ -10,5 +10,6 @@ namespace JBO.Logic.Interface
         void Add(Project entity);
         void Delete(int id);
         void Update(Project entity);
+        void ChangeProjectStatus(int id, bool status);
     }
 }

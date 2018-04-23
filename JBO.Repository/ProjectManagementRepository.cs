@@ -50,5 +50,13 @@ namespace JBO.Repository
             parameters.Add("@ProjectDescription", entity.ProjectDescription);
             SqlDB.Execute("Management.UpdateProject", parameters, commandType: StoredProcedure);
         }
+
+        public void ChangeProjectStatus(int id, bool status)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@id", id);
+            parameters.Add("@isActive", status);
+            SqlDB.Execute("Management.ChangeProjectStatus", parameters, commandType: StoredProcedure);
+        }
     }
 }

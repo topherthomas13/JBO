@@ -9,6 +9,7 @@
     </div>
     <div *ngFor="let project of projects" class="well col-md-3" style="margin: 5px;">
         <div class="badge">{{ project.ProjectName }}</div>
+        <div>{{ project.ProjectDescription }}</div>
         <div>Active: <input type="checkbox" disabled [checked]="project.IsActive" /></div>
         <div>
             <button class="btn btn-default" (click)="updateProject(project.Id)">Update</button>

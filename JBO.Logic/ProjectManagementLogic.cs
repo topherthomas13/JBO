@@ -38,5 +38,10 @@ namespace JBO.Logic
         {
             _projectManagementRepository.Update(entity);
         }
+
+        public void ChangeProjectStatus(int id, bool status)
+        {
+            _projectManagementRepository.ChangeProjectStatus(id, status);
+        }
     }
 }
