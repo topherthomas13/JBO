@@ -48,8 +48,9 @@ export class ProjectComponent implements OnInit {
   }
 
   // save updated project
-  saveProject(project: Project, newName: string) {
-    project.ProjectName = newName;
+  saveProject(project: Project, newName: string, newDescription: string) {
+    project.ProjectName = (newName === project.ProjectName || newName === '') ? project.ProjectName : newName;
+    project.ProjectDescription = (newDescription === project.ProjectDescription || newDescription === '') ? project.ProjectDescription : newDescription;
     this.projectService.updateProject(project)
       .subscribe(() => {
         this.getProjects();
