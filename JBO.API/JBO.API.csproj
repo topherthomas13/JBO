@@ -24,6 +24,7 @@
   <ItemGroup>
     <None Remove="ClientApp\app\apiPathsInjectable.ts" />
     <None Remove="ClientApp\app\config.ts" />
+    <None Remove="ClientApp\app\models\project.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +38,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\apiPathsInjectable.ts" />
     <TypeScriptCompile Include="ClientApp\app\config.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\project.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

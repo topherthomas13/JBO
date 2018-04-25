@@ -1,0 +1,28 @@
+<h2>
+    Projects
+</h2>
+
+<div id="projectContainer">
+    <div id="buttons" style="margin: 10px;">
+        <button class="btn btn-success" (click)="addProject()">Add New Project</button>
+        <input [(ngModel)]="newProject" />
+    </div>
+    <div *ngFor="let project of projects" class="well col-md-3" style="margin: 5px;">
+        <div class="badge">{{ project.ProjectName }}</div>
+        <div>{{ project.ProjectDescription }}</div>
+        <div>Active: <input type="checkbox" disabled [checked]="project.IsActive" /></div>
+        <div>
+            <button class="btn btn-default" (click)="updateProject(project.Id)">Update</button>
+            <button *ngIf="project.IsActive" class="btn btn-danger" (click)="updateProjectStatus(project.Id, false)">Disable</button>
+            <button *ngIf="!project.IsActive" class="btn btn-success" (click)="updateProjectStatus(project.Id, true)">Enable</button>
+            <div [hidden]="!updating || project.Id !== selectedProjectId">
+                <label for="newName">Enter updated name</label>
+                <input id="newName" #newName />
+                <label for="newDescription">Enter updated description</label>
+                <input id="newDescription" #newDescription />
+                <button class="btn btn-default" (click)="saveProject(project, newName.value, newDescription.value)">Save</button>
+                <button class="btn btn-danger" (click)="updating = !updating; newName.value = ''; newDescription.value = ''">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

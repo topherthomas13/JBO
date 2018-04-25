@@ -54,5 +54,13 @@ namespace JBO.API.Controllers
             _projectManagementLogic.Delete(id);
             return Ok();
         }
+
+        [HttpPut("{id}/{status}")]
+        // updates the IsActive value of instructor
+        public IActionResult Put(int id, bool status)
+        {
+            _projectManagementLogic.ChangeProjectStatus(id, status);
+            return Ok();
+        }
     }
 }

@@ -16,41 +16,41 @@ export class InstructorService {
     constructor(private http: HttpClient, private instructorApi: ApiPathsInjectable) { }
 
     // path to the api
-    //private instructorApi = "api/Instructor";
+    private api = this.instructorApi.instructorApi;
 
     // get
     getInstructors(): Observable<Instructor[]> {
         return this.http
-            .get<Instructor[]>(this.instructorApi.instructorApi);
+          .get<Instructor[]>(this.api);
     }
 
     // get
     getInstructor(id: number): Observable<Instructor> {
         return this.http
-            .get<Instructor>(this.instructorApi.instructorApi + "/${id}");
+          .get<Instructor>(this.api + "/${id}");
     }
 
     // post
     addInstructor(instructor: Instructor): Observable<Instructor> {
         return this.http
-            .post<Instructor>(this.instructorApi.instructorApi, instructor, httpOptions);
+          .post<Instructor>(this.api, instructor, httpOptions);
     }
 
     // put
     updateInstructor(instructor: Instructor): Observable<any> {
         return this.http
-            .put(`${this.instructorApi.instructorApi}/${instructor.Id}`, instructor, httpOptions);
+          .put(`${this.api}/${instructor.Id}`, instructor, httpOptions);
     }
 
     // put
     updateInstructorStatus(id: number, status: boolean) {
         return this.http
-            .put(`${this.instructorApi.instructorApi}/${id}/${status}`, null, httpOptions);
+          .put(`${this.api}/${id}/${status}`, null, httpOptions);
     }
 
     // delete
     deleteInstructor(instructor: Instructor): Observable<Instructor> {
         return this.http
-            .delete<Instructor>(`${this.instructorApi.instructorApi}/${instructor.Id}`, httpOptions);
+          .delete<Instructor>(`${this.api}/${instructor.Id}`, httpOptions);
     }
 }
