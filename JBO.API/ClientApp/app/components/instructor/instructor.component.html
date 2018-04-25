@@ -7,7 +7,7 @@
         <button class="btn btn-success" (click)="addInstructor()">Add New Instructor</button>
         <input [(ngModel)]="newInstructor" />
     </div>
-    <div *ngFor="let instructor of instructors" class="well col-md-3" style="margin: 5px;">
+    <div *ngFor="let instructor of cachedInstructors.Data" class="well col-md-3" style="margin: 5px;">
         <div class="badge">{{ instructor.FullName }}</div>
         <div>Active: <input type="checkbox" disabled [checked]="instructor.IsActive" /></div>
         <div>

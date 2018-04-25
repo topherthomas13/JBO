@@ -15,6 +15,7 @@ import { ProjectComponent } from './components/project/project.component';
 
 import { InstructorService } from './services/instructor.service';
 import { ProjectService } from './services/project.service';
+import { DataCacheService } from './services/data-cache.service';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { ProjectService } from './services/project.service';
       { path: '**', redirectTo: 'home' }
     ])
   ],
-  providers: [InstructorService, InstructorApiPath, ProjectApiPath, ApiPathsInjectable, ProjectService]
+  providers: [InstructorService, InstructorApiPath, ProjectApiPath, ApiPathsInjectable, ProjectService, DataCacheService]
 })
 export class AppModuleShared {
 }

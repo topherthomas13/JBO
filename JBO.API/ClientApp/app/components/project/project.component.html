@@ -7,7 +7,7 @@
         <button class="btn btn-success" (click)="addProject()">Add New Project</button>
         <input [(ngModel)]="newProject" />
     </div>
-    <div *ngFor="let project of projects" class="well col-md-3" style="margin: 5px;">
+    <div *ngFor="let project of cachedProjects.Data" class="well col-md-3" style="margin: 5px;">
         <div class="badge">{{ project.ProjectName }}</div>
         <div>{{ project.ProjectDescription }}</div>
         <div>Active: <input type="checkbox" disabled [checked]="project.IsActive" /></div>
