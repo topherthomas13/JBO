@@ -32,14 +32,14 @@ export class DataCacheService {
 
   // delete from DataCache based on entire object
   deleteByObject(co: CacheObject) {
-    if (this.get(co.Name) !== null) {
+    if (this.get(co.Name)) {
       this.cachedObjects.splice(this.cachedObjects.indexOf(co), 1);
     }
   }
 
   // delete from DataCache based on name
   deleteByName(name: string) {
-    if (this.get(name) !== null) {
+    if (this.get(name)) {
       let co = this.cachedObjects.filter(o => o.Name === name)[0] as CacheObject;
       this.deleteByObject(co);
     }
@@ -47,14 +47,14 @@ export class DataCacheService {
 
   // flag as dirty so consuming components know to refresh the data
   markDirty(name: string) {
-    if (this.get(name) !== null) {
+    if (this.get(name)) {
       this.cachedObjects.filter(o => o.Name === name)[0].IsDirty = true;
     }
   }
 
   // update by object the data of existing
   updateByObject(co: CacheObject, data: {}) {
-    if (this.get(co.Name) !== null) {
+    if (this.get(co.Name)) {
       let item: CacheObject = this.cachedObjects.filter(o => o.Name === co.Name)[0];
       item.Data = data;
       item.IsDirty = false;

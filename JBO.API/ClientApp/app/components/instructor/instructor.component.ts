@@ -22,9 +22,7 @@ export class InstructorComponent implements OnInit {
 
   ngOnInit() {
     this.cachedInstructors = this.dataCacheService.get('Instructors');
-    if (!this.cachedInstructors.Data || this.cachedInstructors.IsDirty) {
-      this.getInstructors();
-    }
+    this.getInstructors();
   }
 
   // get all the current instructors from the database
@@ -33,7 +31,7 @@ export class InstructorComponent implements OnInit {
     if (this.cachedInstructors.IsDirty) {
       this.instructorService.getInstructors()
         .subscribe(instructors => {
-          this.cachedInstructors = this.dataCacheService.add('Instructors', instructors);          
+          this.cachedInstructors = this.dataCacheService.add('Instructors', instructors);
         });
     }
   }

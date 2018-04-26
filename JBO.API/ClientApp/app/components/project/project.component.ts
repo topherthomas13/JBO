@@ -22,9 +22,7 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit() {
     this.cachedProjects = this.dataCacheService.get('Projects');
-    if (!this.cachedProjects.Data || this.cachedProjects.IsDirty) {
-      this.getProjects();
-    }
+    this.getProjects();
   }
 
   // get all the current projects from the database
@@ -35,7 +33,7 @@ export class ProjectComponent implements OnInit {
         .subscribe(projects => {
           this.cachedProjects = this.dataCacheService.add('Projects', projects);
         });
-    }
+    } 
   }
 
   // add new project
