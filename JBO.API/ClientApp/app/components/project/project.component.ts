@@ -17,11 +17,12 @@ export class ProjectComponent implements OnInit {
   public newProject = "";
   public selectedProjectId = 0;
   public cachedProjects = new CacheObject();
+  private cacheName = 'Projects';
 
   constructor(private projectService: ProjectService, private dataCacheService: DataCacheService) { }
 
   ngOnInit() {
-    this.cachedProjects = this.dataCacheService.get('Projects');
+    this.cachedProjects = this.dataCacheService.get(this.cacheName);
     this.getProjects();
   }
 
@@ -31,7 +32,7 @@ export class ProjectComponent implements OnInit {
     if (this.cachedProjects.IsDirty) {
       this.projectService.getProjects()
         .subscribe(projects => {
-          this.cachedProjects = this.dataCacheService.add('Projects', projects);
+          this.cachedProjects = this.dataCacheService.add(this.cacheName, projects);
         });
     } 
   }
@@ -42,7 +43,7 @@ export class ProjectComponent implements OnInit {
       this.projectService.addProject({ ProjectName: this.newProject } as Project)
         .subscribe(() => {
           this.newProject = "";
-          this.dataCacheService.markDirty('Projects');
+          this.dataCacheService.markDirty(this.cacheName);
           this.getProjects();
         });
     }
@@ -52,7 +53,7 @@ export class ProjectComponent implements OnInit {
   deleteProject(project: Project): void {
     this.projectService.deleteProject(project)
       .subscribe(() => {
-        this.dataCacheService.markDirty('Projects');
+        this.dataCacheService.markDirty(this.cacheName);
         this.getProjects();
       });
   }
@@ -63,7 +64,7 @@ export class ProjectComponent implements OnInit {
     project.ProjectDescription = (newDescription === project.ProjectDescription || newDescription === '') ? project.ProjectDescription : newDescription;
     this.projectService.updateProject(project)
       .subscribe(() => {
-        this.dataCacheService.markDirty('Projects');
+        this.dataCacheService.markDirty(this.cacheName);
         this.getProjects();
         this.updating = false;
         this.selectedProjectId = -1;
@@ -74,7 +75,7 @@ export class ProjectComponent implements OnInit {
   updateProjectStatus(id: number, status: boolean) {
     this.projectService.updateProjectStatus(id, status)
       .subscribe(() => {
-        this.dataCacheService.markDirty('Projects');
+        this.dataCacheService.markDirty(this.cacheName);
         this.getProjects();
       });
   }

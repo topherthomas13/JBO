@@ -17,11 +17,12 @@ export class InstructorComponent implements OnInit {
   public newInstructor = '';
   public selectedInstructorId = 0;
   public cachedInstructors = new CacheObject();
+  private cacheName = 'Instructors';
 
   constructor(private instructorService: InstructorService, private dataCacheService: DataCacheService) { }
 
   ngOnInit() {
-    this.cachedInstructors = this.dataCacheService.get('Instructors');
+    this.cachedInstructors = this.dataCacheService.get(this.cacheName);
     this.getInstructors();
   }
 
@@ -31,7 +32,7 @@ export class InstructorComponent implements OnInit {
     if (this.cachedInstructors.IsDirty) {
       this.instructorService.getInstructors()
         .subscribe(instructors => {
-          this.cachedInstructors = this.dataCacheService.add('Instructors', instructors);
+          this.cachedInstructors = this.dataCacheService.add(this.cacheName, instructors);
         });
     }
   }
@@ -42,7 +43,7 @@ export class InstructorComponent implements OnInit {
       this.instructorService.addInstructor({ FullName: this.newInstructor } as Instructor)
         .subscribe(() => {
           this.newInstructor = "";
-          this.dataCacheService.markDirty('Instructors');
+          this.dataCacheService.markDirty(this.cacheName);
           this.getInstructors();
         });
     }
@@ -52,7 +53,7 @@ export class InstructorComponent implements OnInit {
   deleteInstructor(instructor: Instructor): void {
     this.instructorService.deleteInstructor(instructor)
       .subscribe(() => {
-        this.dataCacheService.markDirty('Instructors');
+        this.dataCacheService.markDirty(this.cacheName);
         this.getInstructors();
       });
   }
@@ -62,7 +63,7 @@ export class InstructorComponent implements OnInit {
     instructor.FullName = newName;
     this.instructorService.updateInstructor(instructor)
       .subscribe(() => {
-        this.dataCacheService.markDirty('Instructors');
+        this.dataCacheService.markDirty(this.cacheName);
         this.getInstructors();
         this.updating = false;
         this.selectedInstructorId = -1;
@@ -73,7 +74,7 @@ export class InstructorComponent implements OnInit {
   updateInstructorStatus(id: number, status: boolean) {
     this.instructorService.updateInstructorStatus(id, status)
       .subscribe(() => {
-        this.dataCacheService.markDirty('Instructors');
+        this.dataCacheService.markDirty(this.cacheName);
         this.getInstructors();
       });
   }
