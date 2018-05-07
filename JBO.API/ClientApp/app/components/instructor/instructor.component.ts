@@ -32,7 +32,7 @@ export class InstructorComponent implements OnInit {
     if (this.cachedInstructors.IsDirty) {
       this.instructorService.getInstructors()
         .subscribe(instructors => {
-          this.cachedInstructors = this.dataCacheService.add(this.cacheName, instructors);
+          this.cachedInstructors = this.dataCacheService.set(this.cacheName, instructors);
         });
     }
   }

@@ -32,7 +32,7 @@ export class ProjectComponent implements OnInit {
     if (this.cachedProjects.IsDirty) {
       this.projectService.getProjects()
         .subscribe(projects => {
-          this.cachedProjects = this.dataCacheService.add(this.cacheName, projects);
+          this.cachedProjects = this.dataCacheService.set(this.cacheName, projects);
         });
     } 
   }
@@ -49,7 +49,7 @@ export class ProjectComponent implements OnInit {
     }
   }
 
-  // delete an project
+  // delete a project
   deleteProject(project: Project): void {
     this.projectService.deleteProject(project)
       .subscribe(() => {
